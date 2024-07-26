@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="d-flex">
+    <SideBar />
+    <div class="content flex-grow-1">
+      <HeaderComp />
+      <DashboardComp />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderComp from './components/HeaderComp.vue';
+import SideBar from './components/SideBar.vue';
+import DashboardComp from './components/DashboardComp.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    HeaderComp,
+    SideBar,
+    DashboardComp,
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 </style>
